@@ -1,193 +1,336 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import "../font/PixelMplus10-Regular.ttf";
+import type { HeadFC, PageProps } from "gatsby";
+import { animateScroll as scroll } from "react-scroll";
+import * as styles from "../styles/index.module.css";
+import {
+  OnumaRyota,
+  Portfolio,
+  SakuraWitch,
+  MusicianDuck,
+  ArrowIcon,
+  BackButton,
+  CharacterPageTitle,
+  ArticlePageTitle,
+  ProfileTitle,
+  StatusTitle,
+  XIcon,
+  GitHubIcon,
+} from "../images/index";
+import React from "react";
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const doclistStyles = {
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+const Top = () => {
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+  return (
+    <>
+      <div className={styles.top}>
+        <div className={styles.topBackground}></div>
+      </div>
+      <div className={styles.topContents}>
+        <div className={styles.titleText}>
+          <OnumaRyota />
+          <Portfolio />
+        </div>
+        <div className={styles.allCharacters}>
+          <div className={styles.sakuraWitch}>
+            <SakuraWitch />
+          </div>
+          <div className={styles.hero}> </div>
+          <div className={styles.princess}> </div>
+          <div className={styles.musicianDuck}>
+            <MusicianDuck />
+          </div>
+        </div>
+        <div className={styles.pageMoveButtons}>
+          <div className={styles.arrowWrapper}>
+            <ArrowIcon />
+          </div>
+          <div className={styles.backButtonWrapper}>
+            <span onClick={() => scrollToTop()}>
+              <BackButton />
+            </span>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
+const Bottom = () => {
+  return (
+    <>
+      <div className={styles.bottom}>
+        <div className={styles.bottomBackground}></div>
+        <a href="#introduction">Introduction</a>
+        <a href="#articles">Articles</a>
+        <div className={styles.snsContainer}>
+          <a href="https://x.com/onuma_ryota" target="_brank">
+            <XIcon />
+          </a>
+          <a href="https://github.com/Ryota-Onuma" target="_brank">
+            <GitHubIcon />
+          </a>
+        </div>
+      </div>
+    </>
+  );
+};
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
+const SelfIntroduction = () => {
+  const calcAge = (): number => {
+    const today = new Date();
+    const birthday = {
+      year: 1997,
+      month: 8,
+      date: 29,
+    };
 
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
-  },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  }
-]
+    const thisYearsBirthday = new Date(
+      today.getFullYear(),
+      birthday.month - 1,
+      birthday.date,
+    );
+    let age = today.getFullYear() - birthday.year;
+    if (today < thisYearsBirthday) {
+      return age--;
+    }
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
+    return age;
+  };
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/getting-started/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+  const technologies = ["Go", "GraphQL", "Elasitcsearch"];
+
+  return (
+    <>
+      <div className={styles.selfIntroduction}>
+        <div className={styles.selfIntroductionTitle} id="introduction">
+          <CharacterPageTitle />
+        </div>
+        <div className={styles.statusArea}>
+          <div className={styles.statusHero}>
+            <MusicianDuck />
+          </div>
+          <div className={styles.status}>
+            <span className={styles.statusTitle}>
+              <StatusTitle />
+            </span>
+            <div className={styles.statusContent}>
+              <p>
+                {" "}
+                なまえ:{" "}
+                <ruby>
+                  {" "}
+                  尾沼 亮太<rt>おぬま りょうた</rt>
+                </ruby>{" "}
+              </p>
+              <p>レベル: {calcAge()}</p>
+              <p>しごと: ソフトウェアエンジニア</p>
+              <p>じもと: 長野県</p>
+            </div>
+          </div>
+          <div className={styles.status}>
+            <div className={styles.statusContent}>
+              <p>
+                E&ensp;&ensp;
+                {technologies.map((technology, index) => {
+                  return (
+                    <span key={index}>
+                      {technology}
+                      {index + 1 != technologies.length && ", "}
+                    </span>
+                  );
+                })}
+              </p>
+              <p>
+                E&ensp;&ensp;
+                <a href="https://github.com/Ryota-Onuma" target="_brank">
+                  GitHub
+                </a>
+              </p>
+              <p>
+                E&ensp;&ensp;
+                <a href="https://x.com/onuma_ryota" target="_brank">
+                  X(Twitter)
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.selfIntroductionDark}></div>
+    </>
+  );
+};
+
+const Connector = () => {
+  return <div className={styles.connector}> </div>;
+};
+
+const History = () => {
+  const histories = [
+    {
+      period: "2021年4月 ~",
+      org: "株式会社 BuySell Technologies",
+      job: "バックエンドエンジニア",
+      contents: [
+        "2021.12 -\nECモール出品受注一元管理システム",
+        "2021.5 - 2021.12\n在庫管理システムの新規機能開発、保守運用",
+      ],
+    },
+    {
+      period: "2021年3月",
+      org: "横浜国立大学経済学部 卒業",
+      job: "",
+      contents: [],
+    },
+  ];
+  return (
+    <div className={styles.history}>
+      <div className={styles.historyTitle} id="history">
+        <ProfileTitle />
+      </div>
+      <div className={styles.historyWrapper}>
+        <div className={styles.historyWrapperInner}>
+          {histories.map((history, index) => {
+            return (
+              <div key={index} className={styles.historyContent}>
+                <div className={styles.historyMetadata}>
+                  <div className={styles.historyPeriod}>
+                    <span className={styles.historyPeriodCircle}>●</span>
+                    {history.period}
+                  </div>
+                  <div>{history.org}</div>
+                  <div>{history.job}</div>
+                </div>
+                <div className={styles.historyDetails}>
+                  {history.contents.map((content, index) => {
+                    return <p key={index}>{content}</p>;
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Articles = () => {
+  const articleInfos = [
+    {
+      title: "LeetCode: 121. Best Time to Buy and Sell Stock をGoで解く",
+      link: "https://zenn.dev/ryota_onuma/articles/c050d03d6f3bae",
+      imageURL:
+        "https://res.cloudinary.com/zenn/image/upload/s--iN926th1--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:LeetCode%253A%2520121.%2520Best%2520Time%2520to%2520Buy%2520and%2520Sell%2520Stock%2520%25E3%2582%2592Go%25E3%2581%25A7%25E8%25A7%25A3%25E3%2581%258F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Ryota%2520Onuma%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzAzN2QwZTdkYzQuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+    },
+    {
+      title: "LeetCode: 189. Rotate Array をGoで解く",
+      link: "https://zenn.dev/ryota_onuma/articles/b12e4e994a2245",
+      imageURL:
+        "https://res.cloudinary.com/zenn/image/upload/s--uFAdbChk--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:LeetCode%253A%2520189.%2520Rotate%2520Array%2520%25E3%2582%2592Go%25E3%2581%25A7%25E8%25A7%25A3%25E3%2581%258F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Ryota%2520Onuma%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzAzN2QwZTdkYzQuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+    },
+    {
+      title: "LeetCode: 169. Majority Element をGoで解く",
+      link: "https://zenn.dev/ryota_onuma/articles/b0fa3fc1173648",
+      imageURL:
+        "https://res.cloudinary.com/zenn/image/upload/s--yx5daGRN--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:LeetCode%253A%2520169.%2520Majority%2520Element%2520%25E3%2582%2592Go%25E3%2581%25A7%25E8%25A7%25A3%25E3%2581%258F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Ryota%2520Onuma%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzAzN2QwZTdkYzQuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+    },
+    {
+      title: "サービス運用の負担軽減に繋がった、Playwrightの紹介 - バイセル Tech Blog",
+      link: "https://tech.buysell-technologies.com/entry/adventcalendar2023-12-03-01",
+      imageURL:
+        "https://cdn-ak.f.st-hatena.com/images/fotolife/b/bst-tech/20231130/20231130195121.png",
+    },
+    {
+      title:
+        "プレ負荷テストの導入が、新規開発プロジェクトの負荷テストを円滑にした体験談 - バイセル Tech Blog",
+      link: "https://tech.buysell-technologies.com/entry/2023/10/30/102458",
+      imageURL:
+        "https://cdn-ak.f.st-hatena.com/images/fotolife/b/bst-tech/20231023/20231023164227.png",
+    },
+    {
+      title:
+        "HasuraのRemote Schema to Database Relationshipsを用いたElasticsearchとの検索連携 - バイセル Tech Blog",
+      link: "https://tech.buysell-technologies.com/entry/2023/02/28/080000",
+      imageURL:
+        "https://cdn-ak.f.st-hatena.com/images/fotolife/b/bst-tech/20230228/20230228121619.png",
+    },
+    {
+      title:
+        "リファイメントとプランニングを改善することで、チームの属人化が解消された話 - バイセル Tech Blog",
+      link: "https://tech.buysell-technologies.com/entry/adventcalendar2022-12-03",
+      imageURL:
+        "https://cdn-ak.f.st-hatena.com/images/fotolife/b/bst-tech/20221129/20221129105529.png",
+    },
+    {
+      title:
+        "Hasura CLIで挿入するマスタデータをスプレッドシート管理に移行させたので振り返ってみた",
+      link: "https://tech.buysell-technologies.com/entry/2022/07/30/153326",
+      imageURL:
+        "https://ogimage.blog.st-hatena.com/17680117126983215210/4207112889903915559/1692772760",
+    },
+    {
+      title:
+        "在庫管理システムの本番環境DBアップグレードを振り返ってみる - バイセル Tech Blog",
+      link: "https://tech.buysell-technologies.com/entry/2022/01/26/202243",
+      imageURL:
+        "https://ogimage.blog.st-hatena.com/17680117126983215210/13574176438052951327/1692772890",
+    },
+    {
+      title:
+        "CircleCIで構築されたCI/CD環境をGitHub Actionsに移行した際のポイント - バイセル Tech Blog",
+      link: "https://tech.buysell-technologies.com/entry/adventcalendar2021-12-05",
+      imageURL:
+        "https://ogimage.blog.st-hatena.com/17680117126983215210/13574176438029286846/1692774674",
+    },
+    {
+      title: "バイセルの内定者インターン with コロナってどんなことするの？？",
+      link: "https://tech.buysell-technologies.com/entry/2020/12/21/092653",
+      imageURL:
+        "https://res.cloudinary.com/djprqtbkw/image/upload/v1702647393/lomxlnblevpqm9fg8l7v.png",
+    },
+  ];
+
+  return (
+    <div className={styles.articles}>
+      <div className={styles.selfIntroductionTitle} id="articles">
+        <ArticlePageTitle />
+      </div>
+      <div className={styles.articlesWrapper}>
+        {articleInfos.map((info, index) => {
+          return (
+            <div key={index} className={styles.article}>
+              <a href={info.link} target="_blank">
+                <img src={info.imageURL} alt={info.title} />
+              </a>
+            </div>
+          );
+        })}
+        ;
+      </div>
+    </div>
+  );
+};
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li key={doc.url} style={docLinkStyle}>
-            <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-            >
-              {doc.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+    <main className={styles.body}>
+      <Top />
+      <Connector />
+      <SelfIntroduction />
+      <Connector />
+      <History />
+      <Connector />
+      <Articles />
+      <Connector />
+      <Bottom />
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Home Page</title>;
