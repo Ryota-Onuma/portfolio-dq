@@ -10,7 +10,19 @@
 }
 
 @media (max-width: 428px) {
+    .body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        font-family: "PixelMplus", sans-serif;
+    }
 }
 
 @media (min-width: 429px) {
+    .body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        font-family: "PixelMplus", sans-serif;
+    }
 }

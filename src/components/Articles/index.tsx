@@ -93,10 +93,7 @@ const Articles = () => {
 
 const Title = () => {
     return (
-        <div
-            className={`${styles.titleWrapper} ${commonStyles.titleWrapper}`}
-            id="articles"
-        >
+        <div className={commonStyles.titleWrapper} id="articles">
             <div className={`${styles.title} ${commonStyles.title}`} />
         </div>
     );

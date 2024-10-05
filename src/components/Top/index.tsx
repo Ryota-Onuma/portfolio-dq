@@ -64,10 +64,10 @@ const MusicianDuck = () => {
 
 const Scroll = () => {
     return <div className={styles.scroll} />;
-}
+};
 
 const Back = () => {
     return <div className={styles.back} />;
-}
+};
 
 export default Top;

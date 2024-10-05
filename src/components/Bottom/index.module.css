@@ -10,13 +10,14 @@
         background: url("./images/background-1.png");
         background-size: cover;
         font-weight: bold;
-        a {
-            display: inline-block;
-            color: white;
-            z-index: 10;
-            text-decoration: none;
-            font-size: 24px;
-        }
+    }
+
+    .bottom a {
+        display: inline-block;
+        color: white;
+        z-index: 10;
+        text-decoration: none;
+        font-size: 24px;
     }
 
     .bottomBackground {

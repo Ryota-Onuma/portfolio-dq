@@ -43,10 +43,7 @@ const History = () => {
 
 const Title = () => {
     return (
-        <div
-            className={`${styles.titleWrapper} ${commonStyles.titleWrapper}`}
-            id="history"
-        >
+        <div className={commonStyles.titleWrapper} id="history">
             <div className={`${styles.title} ${commonStyles.title}`} />
         </div>
     );

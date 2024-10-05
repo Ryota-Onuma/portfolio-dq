@@ -24,10 +24,10 @@ const Bottom = () => {
 
 const X = () => {
     return <div className={styles.x} />;
-}
+};
 
 const GitHub = () => {
     return <div className={styles.github} />;
-}
+};
 
 export default Bottom;
