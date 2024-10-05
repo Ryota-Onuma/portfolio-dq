@@ -1,0 +1,36 @@
+@media (max-width: 428px) {
+  .articles {
+    width: 100%;
+    background-color: black;
+    padding-top: 80px;
+  }
+
+  .articlesWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .article {
+    width: 100%;
+    height: auto;
+    background-image: url("./images/board.png");
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    box-sizing: border-box;
+    img {
+      width: 100%;
+      object-fit: contain;
+      display: inline-block;
+      margin: 0 auto;
+    }
+  }
+}

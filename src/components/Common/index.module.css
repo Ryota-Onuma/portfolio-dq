@@ -1,0 +1,18 @@
+@media (max-width: 428px) {
+  .area {
+    width: 100vw;
+  }
+
+  .connector {
+    position: relative;
+  }
+  .connector::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 100vw;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 2;
+  }
+}

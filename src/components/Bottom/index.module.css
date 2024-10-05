@@ -1,0 +1,42 @@
+@media (max-width: 428px) {
+  .bottom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 100px 40px;
+    box-sizing: border-box;
+    background: url("./images/background-1.png");
+    background-size: cover;
+    a {
+      display: inline-block;
+      color: white;
+      z-index: 10;
+      text-decoration: none;
+      font-size: 24px;
+    }
+  }
+
+  .bottomBackground {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.95) 10%,
+      rgba(0, 0, 0, 0.3)
+    );
+    z-index: 3;
+  }
+
+  .snsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 10;
+  }
+}
