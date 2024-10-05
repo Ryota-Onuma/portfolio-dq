@@ -1,18 +1,36 @@
 @media (max-width: 428px) {
-  .area {
-    width: 100vw;
-  }
+    .area {
+        width: 100vw;
+    }
 
-  .connector {
-    position: relative;
-  }
-  .connector::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    width: 100vw;
-    height: 20px;
-    background-color: rgba(0, 0, 0, 1);
-    z-index: 2;
-  }
+    .titleWrapper {
+        width: 100vw;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+
+    .title {
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .connector {
+        position: relative;
+    }
+
+    .connector::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        width: 100vw;
+        height: 20px;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 2;
+    }
 }

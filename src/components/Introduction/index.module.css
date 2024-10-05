@@ -1,89 +1,92 @@
 @media (max-width: 428px) {
-  .introduction {
-    width: 100%;
-    padding-top: 80px;
-    box-sizing: border-box;
-    background-image: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0) 60%,
-        rgba(0, 0, 0, 1)
-      ),
-      url("./images/background-2.png");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-
-  .introductionTitle {
-    width: 70%;
-    padding: 0 10px;
-    box-sizing: border-box;
-    img {
-      width: 100%;
-      object-fit: contain;
+    .introduction {
+        width: 100%;
+        padding-top: 120px;
+        box-sizing: border-box;
+        background-image: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0) 60%,
+                rgba(0, 0, 0, 1)
+            ),
+            url("./images/background-2.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
     }
-  }
 
-  .statusArea {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .statusTitle {
-    width: 100%;
-    position: absolute;
-    top: -10px;
-    left: 0;
-    z-index: 10;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .status {
-    width: 90%;
-    background-color: black;
-    border: 3px solid white;
-    border-radius: 7px;
-    position: relative;
-  }
-
-  .statusHero {
-    width: 30%;
-    img {
-      width: 100%;
-      object-fit: contain;
+    .title {
+        background-image: url("./images/title.png");
     }
-  }
 
-  .statusContent {
-    color: white;
-    padding: 20px 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    /* ステータスエリア */
 
-    a {
-      color: white;
+    .status {
+        width: 90%;
+        background-color: black;
+        border: 3px solid white;
+        border-radius: 7px;
+        position: relative;
     }
-  }
 
-  .introductionDark {
-    width: 100%;
-    height: 15vh;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 10%,
-      rgba(0, 0, 0, 1)
-    );
-    border: none;
-  }
+    .statusArea {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding-top: 50px;
+        box-sizing: border-box;
+    }
+
+    .statusTitleWrapper {
+        position: relative;
+        width: 100%;
+        background-color: red;
+    }
+
+    .statusTitle {
+        position: absolute;
+        top: -3px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 100px;
+        height: 20px;
+        background-image: url("./images/feature.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .statusCharacter {
+        width: 120px;
+        height: 120px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("./images/musician-duck.png");
+    }
+
+    .statusContent {
+        color: white;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        a {
+            color: white;
+        }
+    }
+
+    .introductionDark {
+        width: 100%;
+        height: 15vh;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 10%,
+            rgba(0, 0, 0, 1)
+        );
+        border: none;
+    }
 }

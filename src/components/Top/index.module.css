@@ -1,180 +1,220 @@
 @media (max-width: 428px) {
-  .top {
-    position: relative;
-    top: 0;
-    overflow: hidden;
-    z-index: 2;
-    height: 100vh;
-  }
-
-  .top::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1));
-    z-index: 3;
-  }
-
-  .topBackground {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 1000vh;
-    background: url("./images/background-1.png") repeat-y;
-    background-size: contain;
-    animation: scroll 20s linear infinite;
-    z-index: 1;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateY(0);
+    .top {
+        position: relative;
+        top: 0;
+        overflow: hidden;
+        z-index: 2;
+        height: 100vh;
     }
-    100% {
-      transform: translateY(-300vh);
-    }
-  }
 
-  .topContents {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    z-index: 5;
-    img {
-      width: 80%;
-      object-fit: contain;
+    .top::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 1)
+        );
+        z-index: 3;
     }
-  }
-  .titleText {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    svg {
-      scale: 1.3;
+
+    .background {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 1000vh;
+        background: url("./images/background-1.png") repeat-y;
+        background-size: contain;
+        animation: scroll 20s linear infinite;
+        z-index: 1;
     }
-  }
 
-  .allCharacters {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .hero {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    animation: image-switch-animation-hero 0.5s infinite;
-    background-size: cover;
-    background-position: center;
-    scale: 1.3;
-  }
-
-  @keyframes image-switch-animation-hero {
-    0% {
-      transform: translateX(1%);
-      background-image: url("./images/hero-walk-1.png");
+    .contents {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        z-index: 5;
+        img {
+            width: 80%;
+            object-fit: contain;
+        }
     }
-    100% {
-      transform: translateX(-1%);
-      background-image: url("./images/hero-walk-2.png");
-    }
-  }
 
-  .princess {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    animation: image-switch-animation-princess 0.5s infinite;
-    background-size: cover;
-    background-position: center;
-    scale: 1.2;
-  }
-
-  @keyframes image-switch-animation-princess {
-    0% {
-      transform: translateY(2%);
-      background-image: url("./images/princess-walk-1.png");
+    .title {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
-    100% {
-      transform: translateY(0%);
-      background-image: url("./images/princess-walk-2.png");
+    .onumaRyota {
+        width: 155px;
+        height: 30px;
+        background-image: url("./images/onuma-ryota.png");
+        background-size: contain;
+        background-repeat: no-repeat;
     }
-  }
 
-  .sakuraWitch {
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    img {
-      object-fit: contain;
-      animation: hop 0.2s ease infinite alternate-reverse;
+    .portfolio {
+        width: 245px;
+        height: 55px;
+        background-image: url("./images/portfolio.png");
+        background-size: contain;
+        background-repeat: no-repeat;
     }
-  }
 
-  .musicianDuck {
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    img {
-      object-fit: contain;
-      animation: hop 0.2s ease infinite alternate-reverse;
+    .characters {
+        width: 90%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+        gap: 10px;
     }
-  }
 
-  @keyframes hop {
-    0% {
-      transform: translateY(0%);
+    .hero {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        animation: image-switch-animation-hero 0.7s infinite;
+        background-size: cover;
+        background-position: center;
+        scale: 1.3;
     }
-    100% {
-      transform: translateY(5%);
+
+    .princess {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        animation: image-switch-animation-princess 0.7s infinite;
+        background-size: cover;
+        background-position: center;
+        scale: 1.2;
     }
-  }
 
-  .pageMoveButtons {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .backButtonWrapper {
-    position: fixed;
-    bottom: 100px;
-    right: 0;
-    z-index: 1000;
-  }
-
-  .arrowWrapper {
-    animation: floating-y 1s ease-in-out infinite alternate-reverse;
-  }
-
-  @keyframes floating-y {
-    0% {
-      transform: translateY(-10%);
+    .sakuraWitch {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        animation: hop 0.1s ease infinite alternate-reverse;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("./images/sakura-witch.png");
     }
-    100% {
-      transform: translateY(10%);
+
+    .musicianDuck {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        animation: hop 0.1s ease infinite alternate-reverse;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("./images/musician-duck.png");
     }
-  }
+
+    .buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .backButton {
+        position: fixed;
+        bottom: 100px;
+        right: 40px;
+        z-index: 1000;
+    }
+
+    .back {
+        width: 55px;
+        height: 55px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./images/back.png");
+        animation: floating-y 1s ease-in-out infinite alternate-reverse;
+    }
+
+    .scroll {
+        width: 55px;
+        height: 55px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./images/scroll.png");
+        animation: floating-y 1s ease-in-out infinite alternate-reverse;
+    }
+
+    /* 以下アニメーション */
+
+    @keyframes scroll {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-300vh);
+        }
+    }
+
+    @keyframes image-switch-animation-hero {
+        0% {
+            transform: translateY(1%);
+            background-image: url("./images/hero-walk-1.png");
+        }
+        100% {
+            transform: translateY(-1%);
+            background-image: url("./images/hero-walk-2.png");
+        }
+    }
+
+    @keyframes image-switch-animation-princess {
+        0% {
+            transform: translateY(2%);
+            background-image: url("./images/princess-walk-1.png");
+        }
+        100% {
+            transform: translateY(0%);
+            background-image: url("./images/princess-walk-2.png");
+        }
+    }
+
+    @keyframes hop {
+        0% {
+            transform: translateY(0%);
+        }
+        100% {
+            transform: translateY(5%);
+        }
+    }
+
+    @keyframes floating-y {
+        0% {
+            transform: translateY(-10%);
+        }
+        100% {
+            transform: translateY(10%);
+        }
+    }
 }

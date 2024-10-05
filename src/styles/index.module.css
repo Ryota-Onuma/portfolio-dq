@@ -1,16 +1,12 @@
 @font-face {
-  font-family: "PixelMplus";
-  src: url("../font/PixelMplus10-Regular.ttf") format("truetype");
+    font-family: "PixelMplus";
+    src: url("../font/PixelMplus10-Regular.ttf") format("truetype");
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "PixelMplus", sans-serif;
-}
-
-.body {
-  width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: "PixelMplus", sans-serif;
 }
 
 @media (max-width: 428px) {

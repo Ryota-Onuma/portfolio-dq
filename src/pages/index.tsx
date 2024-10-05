@@ -10,19 +10,19 @@ import { Connector } from "../components/Common";
 import React from "react";
 
 const IndexPage: React.FC<PageProps> = () => {
-  return (
-    <main className={styles.body}>
-      <Top />
-      <Connector />
-      <Introduction />
-      <Connector />
-      <History />
-      <Connector />
-      <Articles />
-      <Connector />
-      <Bottom />
-    </main>
-  );
+    return (
+        <main className={styles.body}>
+            <Top />
+            <Connector />
+            <Introduction />
+            <Connector />
+            <History />
+            <Connector />
+            <Articles />
+            <Connector />
+            <Bottom />
+        </main>
+    );
 };
 
 export default IndexPage;
