@@ -31,58 +31,62 @@ const Introduction = () => {
             <div className={`${styles.introduction} ${commonStyles.area}`}>
                 <Title />
                 <div className={styles.statusArea}>
-                    <div className={styles.statusCharacter} />
-                    <div className={styles.status}>
-                        <div className={styles.statusTitleWrapper}>
-                            <span className={styles.statusTitle} />
-                        </div>
-                        <div className={styles.statusContent}>
-                            <p>
-                                {" "}
-                                なまえ:{" "}
-                                <ruby>
-                                    {" "}
-                                    尾沼 亮太<rt>おぬま りょうた</rt>
-                                </ruby>{" "}
-                            </p>
-                            <p>レベル: {calcAge()}</p>
-                            <p>しごと: ソフトウェアエンジニア</p>
-                            <p>じもと: 長野県</p>
-                        </div>
+                    <div className={styles.statusCharacter}>
+                        <Character />
                     </div>
-                    <div className={styles.status}>
-                        <div className={styles.statusContent}>
-                            <p>
-                                E&ensp;&ensp;
-                                {technologies.map((technology, index) => {
-                                    return (
-                                        <span key={index}>
-                                            {technology}
-                                            {index + 1 != technologies.length &&
-                                                ", "}
-                                        </span>
-                                    );
-                                })}
-                            </p>
-                            <p>
-                                E&ensp;&ensp;
-                                <a
-                                    href="https://github.com/Ryota-Onuma"
-                                    target="_brank"
-                                >
-                                    GitHub
-                                </a>
-                            </p>
-                            <p>
-                                E&ensp;&ensp;
-                                <a
-                                    href="https://x.com/onuma_ryota"
-                                    target="_brank"
-                                >
-                                    X(Twitter)
-                                </a>
-                            </p>
+                    <div className={styles.statusContainer}>
+                        <div className={styles.status}>
+                            <div className={styles.statusTitleWrapper}>
+                                <span className={styles.statusTitle} />
+                            </div>
+                            <div className={styles.statusContent}>
+                                <p>
+                                    {" "}
+                                    なまえ:{" "}
+                                    <ruby>
+                                        {" "}
+                                        尾沼 亮太<rt>おぬま りょうた</rt>
+                                    </ruby>{" "}
+                                </p>
+                                <p>レベル: {calcAge()}</p>
+                                <p>しごと: ソフトウェアエンジニア</p>
+                                <p>じもと: 長野県</p>
+                            </div>
                         </div>
+                        <div className={styles.status}>
+                            <div className={styles.statusContent}>
+                                <p>
+                                    E&ensp;&ensp;
+                                    {technologies.map((technology, index) => {
+                                        return (
+                                            <span key={index}>
+                                                {technology}
+                                                {index + 1 !=
+                                                    technologies.length && ", "}
+                                            </span>
+                                        );
+                                    })}
+                                </p>
+                                <p>
+                                    E&ensp;&ensp;
+                                    <a
+                                        href="https://github.com/Ryota-Onuma"
+                                        target="_brank"
+                                    >
+                                        GitHub
+                                    </a>
+                                </p>
+                                <p>
+                                    E&ensp;&ensp;
+                                    <a
+                                        href="https://x.com/onuma_ryota"
+                                        target="_brank"
+                                    >
+                                        X(Twitter)
+                                    </a>
+                                </p>
+                            </div>
+                        </div>{" "}
                     </div>
                 </div>
             </div>
@@ -99,4 +103,7 @@ const Title = () => {
     );
 };
 
+const Character = () => {
+    return <div className={styles.character} />;
+};
 export default Introduction;

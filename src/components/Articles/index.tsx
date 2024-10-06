@@ -73,19 +73,22 @@ const Articles = () => {
     ];
 
     return (
-        <div className={styles.articles}>
+        <div className={`${styles.articles} ${commonStyles.area}`}>
             <Title />
             <div className={styles.articlesWrapper}>
                 {articleInfos.map((info, index) => {
                     return (
                         <div key={index} className={styles.article}>
                             <a href={info.link} target="_blank">
-                                <img src={info.imageURL} alt={info.title} />
+                                <img
+                                    src={info.imageURL}
+                                    alt={info.title}
+                                    onError="this.onerror=null;this.src='/images/musician-duck.png';"
+                                />
                             </a>
                         </div>
                     );
                 })}
-                ;
             </div>
         </div>
     );

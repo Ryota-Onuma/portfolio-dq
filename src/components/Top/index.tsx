@@ -10,7 +10,7 @@ const Top = () => {
 
     return (
         <>
-            <div className={`${styles.top} ${commonStyles.area}`}>
+            <div className={styles.top}>
                 <div className={styles.background}></div>
             </div>
             <div className={styles.contents}>

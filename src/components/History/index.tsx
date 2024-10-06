@@ -28,7 +28,7 @@ const History = () => {
         },
     ];
     return (
-        <div className={styles.histories}>
+        <div className={`${styles.histories} ${commonStyles.area}`}>
             <Title />
             <div className={styles.historyWrapper}>
                 <div className={styles.historyWrapperInner}>

@@ -9,7 +9,7 @@
     font-family: "PixelMplus", sans-serif;
 }
 
-@media (max-width: 428px) {
+@media (max-width: 1023px) {
     .body {
         width: 100vw;
         margin: 0;
@@ -18,11 +18,13 @@
     }
 }
 
-@media (min-width: 429px) {
+@media (min-width: 1024px) {
     .body {
         width: 100vw;
         margin: 0;
         padding: 0;
         font-family: "PixelMplus", sans-serif;
+        font-size: 24px;
+        background-color: black;
     }
 }

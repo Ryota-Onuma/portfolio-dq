@@ -1,10 +1,10 @@
-@media (max-width: 428px) {
+@media (max-width: 1023px) {
     .bottom {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 40px;
         padding: 100px 40px;
         box-sizing: border-box;
         background: url("./images/background-1.png");
@@ -35,9 +35,91 @@
         z-index: 3;
     }
 
+    .links {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: flex-start;
+        gap: 20px;
+        z-index: 10;
+    }
+
     .snsContainer {
         display: flex;
         flex-direction: row;
+        gap: 20px;
+        z-index: 10;
+    }
+
+    .x {
+        width: 30px;
+        height: 30px;
+        background-image: url("./images/x.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .github {
+        width: 30px;
+        height: 30px;
+        background-image: url("./images/github.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bottom {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 100px 40px;
+        box-sizing: border-box;
+        background: url("./images/background-1.png");
+        background-size: cover;
+        font-weight: bold;
+    }
+
+    .bottom a {
+        display: inline-block;
+        color: white;
+        z-index: 10;
+        text-decoration: none;
+        font-size: 24px;
+    }
+
+    .bottomBackground {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.95) 10%,
+            rgba(0, 0, 0, 0.3)
+        );
+        z-index: 3;
+    }
+    .links {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: flex-start;
+        gap: 20px;
+        z-index: 10;
+    }
+
+    .snsContainer {
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-items: flex-start;
         gap: 20px;
         z-index: 10;
     }
